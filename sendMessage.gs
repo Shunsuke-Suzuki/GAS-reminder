@@ -22,11 +22,17 @@ function myFunction() {
   // ====================================
   const sheet = SpreadsheetApp.openById(PropertiesService.getScriptProperties().getProperty("SPREAD_SHEET_ID"));
   const cleaningList = sheet.getRange("A1:B3").getValues()
+  const NAME_COLUMN = 0
+  const ROOM_COLUMN = 1
+  
   cleaningList.forEach(function(row) {
-    blockKit.push(section(row[0], row[1]))
+    blockKit.push(section(row))
   })
   
-  function section(name, room) {
+  function section(row) {
+    const name = row[NAME_COLUMN]
+    const room = row[ROOM_COLUMN]
+    
     return {
       "type": "section",
       "text": {
