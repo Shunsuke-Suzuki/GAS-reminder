@@ -1,9 +1,9 @@
 function myFunction() {
 
   // ====================================
-  // ヘッダーテキスト
+  // ベースメッセージ
   // ====================================
-  const blockKit = [
+  const BASE_MESSAGE = [
     {
        "type": "section",
        "text": {
@@ -24,10 +24,6 @@ function myFunction() {
   const cleaningList = sheet.getRange("A1:B3").getValues()
   const NAME_COLUMN = 0
   const ROOM_COLUMN = 1
-  
-  cleaningList.forEach(function(row) {
-    blockKit.push(section(row))
-  })
   
   function section(row) {
     const name = row[NAME_COLUMN]
@@ -51,12 +47,17 @@ function myFunction() {
       }
     }
   }
+  
+  const sections = cleaningList.map(function(row) {
+    return section(row)
+  })
+  const blockKitMessage = BASE_MESSAGE.concat(sections)
 
   // ====================================
   // Slackにメッセージを送信する
   // ====================================
   const url = PropertiesService.getScriptProperties().getProperty("SLACK_WEBHOOK_URL");
-  const payload = {'blocks' : blockKit};
+  const payload = {'blocks' : blockKitMessage};
   const options = {
                   'method' : 'POST',
                   'payload': JSON.stringify(payload)
