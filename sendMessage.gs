@@ -1,11 +1,9 @@
 function myFunction() {
-  const sheet = SpreadsheetApp.openById(PropertiesService.getScriptProperties().getProperty("SPREAD_SHEET_ID"));
-  const cleaningList = sheet.getRange("A1:B3").getValues()
-  
-  const url = PropertiesService.getScriptProperties().getProperty("SLACK_WEBHOOK_URL");
-  console.log(url)
-  
-  var blockKit = [
+
+  // ====================================
+  // ヘッダーテキスト
+  // ====================================
+  const blockKit = [
     {
        "type": "section",
        "text": {
@@ -15,14 +13,15 @@ function myFunction() {
        }
     },
     {
-       "type": "section",
-       "text": {
-         "type": "plain_text",
-         "text": "==========",
-         "emoji": true,
-       }
+       "type": "divider",
     }
   ]
+  
+  // ====================================
+  // スプレッドシートを参照してメッセージを作成する
+  // ====================================
+  const sheet = SpreadsheetApp.openById(PropertiesService.getScriptProperties().getProperty("SPREAD_SHEET_ID"));
+  const cleaningList = sheet.getRange("A1:B3").getValues()
   cleaningList.forEach(function(row) {
     blockKit.push(section(row[0], row[1]))
   })
@@ -47,8 +46,10 @@ function myFunction() {
     }
   }
 
-
-  // Slackに送信する
+  // ====================================
+  // Slackにメッセージを送信する
+  // ====================================
+  const url = PropertiesService.getScriptProperties().getProperty("SLACK_WEBHOOK_URL");
   var payload = {'blocks' : blockKit};
   var options = {
                   'method' : 'POST',
