@@ -50,8 +50,8 @@ function myFunction() {
   // Slackにメッセージを送信する
   // ====================================
   const url = PropertiesService.getScriptProperties().getProperty("SLACK_WEBHOOK_URL");
-  var payload = {'blocks' : blockKit};
-  var options = {
+  const payload = {'blocks' : blockKit};
+  const options = {
                   'method' : 'POST',
                   'payload': JSON.stringify(payload)
                 };
