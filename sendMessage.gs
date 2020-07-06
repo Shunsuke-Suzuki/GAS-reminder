@@ -67,20 +67,3 @@ function myFunction() {
 
   UrlFetchApp.fetch(url, options);
 }
-
-function doPost(e) {
-
-  function updateStatus(row, value) {
-    const ss = SpreadsheetApp.openById(PropertiesService.getScriptProperties().getProperty("SPREAD_SHEET_ID"))
-    const sheet = ss.getSheets()[0]
-    const CHECKBOX_COLUMN = 3
-    
-    var range = sheet.getRange(row, CHECKBOX_COLUMN);
-    var value = range.setValue(value);
-  }
-  
-  var payload = JSON.parse(e["parameter"]["payload"]);
-  var value = payload["actions"][0]["value"];
-  
-  updateStatus(11, value)
-}
