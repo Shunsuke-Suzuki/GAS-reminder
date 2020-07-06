@@ -1,4 +1,4 @@
-function sendMessage() {
+function sendMessage(memberRows) {
 
   // ====================================
   // ベースメッセージ
@@ -18,10 +18,9 @@ function sendMessage() {
   ]
   
   // ====================================
-  // スプレッドシートを参照してメッセージを作成する
+  // メッセージを作成する
   // ====================================
-  const sheet = SpreadsheetApp.openById(PropertiesService.getScriptProperties().getProperty("SPREAD_SHEET_ID"));
-  const cleaningList = sheet.getRange("A2:C4").getValues()
+
   const ID_COLUMN = 0
   const NAME_COLUMN = 1
   const ROOM_COLUMN = 2
@@ -50,7 +49,7 @@ function sendMessage() {
     }
   }
   
-  const sections = cleaningList.map(function(row) {
+  const sections = memberRows.map(row => {
     return section(row)
   })
   const blockKitMessage = BASE_MESSAGE.concat(sections)
