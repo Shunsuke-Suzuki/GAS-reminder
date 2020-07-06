@@ -21,11 +21,13 @@ function myFunction() {
   // スプレッドシートを参照してメッセージを作成する
   // ====================================
   const sheet = SpreadsheetApp.openById(PropertiesService.getScriptProperties().getProperty("SPREAD_SHEET_ID"));
-  const cleaningList = sheet.getRange("A1:B3").getValues()
-  const NAME_COLUMN = 0
-  const ROOM_COLUMN = 1
+  const cleaningList = sheet.getRange("A2:C4").getValues()
+  const ID_COLUMN = 0
+  const NAME_COLUMN = 1
+  const ROOM_COLUMN = 2
   
   function section(row) {
+    const id = row[ID_COLUMN]
     const name = row[NAME_COLUMN]
     const room = row[ROOM_COLUMN]
     
@@ -43,7 +45,7 @@ function myFunction() {
           "emoji": true
         },
         "style": "primary",
-        "value": "done!!!!!!"
+        "value": String(id)
       }
     }
   }
@@ -65,3 +67,4 @@ function myFunction() {
 
   UrlFetchApp.fetch(url, options);
 }
+
