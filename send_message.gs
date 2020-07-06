@@ -1,4 +1,4 @@
-function myFunction() {
+function sendMessage() {
 
   // ====================================
   // ベースメッセージ
