@@ -11,10 +11,7 @@ function doPost(e) {
   const payload = JSON.parse(e["parameter"]["payload"]);
   const value = payload["actions"][0]["value"];
   const [id, date] = value.split(',')
-
-  const column = findRow(sheet, date, 0) 
   
-  updateStatus(sheet, Number(id), 6, true)  // TODO: これは動作確認のためのコード
-  updateStatus(sheet, Number(id), 10, payload.response_url)  // TODO: これは動作確認のためのコード
+  updateStatus(sheet, 10, 10, id)  // TODO: これは動作確認のためのコード。シートのJ10セルに押したボタンのidが挿入されます
 
 }

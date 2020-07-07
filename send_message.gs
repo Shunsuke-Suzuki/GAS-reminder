@@ -44,7 +44,7 @@ function sendMessage(memberRows) {
           "emoji": true
         },
         "style": "primary",
-        "value": String(id) + "," + "0706"
+        "value": String(id) + "," + "0706" // TODO: ベタ書き修正する
       }
     }
   }
