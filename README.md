@@ -5,7 +5,7 @@
 - chat:write
 - incoming-webhook
 
-## スプレッドシート
+## 使用するスプレッドシート
 以下のようなスプレッドシートを作成してください。
 <img width="633" alt="スクリーンショット 2020-07-07 21 24 43" src="https://user-images.githubusercontent.com/49185403/86781287-a7bd8980-c098-11ea-8aaa-8aa18c0d6090.png">
 
