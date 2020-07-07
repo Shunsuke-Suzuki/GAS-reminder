@@ -44,7 +44,7 @@ function sendMessage(memberRows) {
           "emoji": true
         },
         "style": "primary",
-        "value": String(id)
+        "value": String(id) + "," + "0706"
       }
     }
   }
