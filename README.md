@@ -16,6 +16,7 @@ GAS IDE（ブラウザ:chrome）で開発します。
 3. **GASのプロジェクト画面からGoogle Apps Script GitHub アシスタントにログインし、このリポジトリを指定してpull**
 
 ※ GitHubのアクセストークンが必要です。アクセストークンの取得方法は[こちら](https://docs.github.com/ja/github/authenticating-to-github/creating-a-personal-access-token)
+
 4. **環境変数を設定**
 
 ```ファイル > プロジェクトのプロパティ > スクリプトのプロパティ```から以下を設定する。
