@@ -1,4 +1,4 @@
-function sendMessage(memberRows) {
+function sendMessage(memberRows, date) {
 
   // ====================================
   // ベースメッセージ
@@ -29,7 +29,7 @@ function sendMessage(memberRows) {
     const id = row[ID_COLUMN]
     const name = row[NAME_COLUMN]
     const room = row[ROOM_COLUMN]
-    
+ 
     return {
       "type": "section",
       "text": {

@@ -7,6 +7,6 @@ function myFunction() {
   
   
   const memberRows = extractMember(sheet, '土') // TODO: ベタ書きを修正する
-  
-  sendMessage(memberRows)
+  const today = new Date()
+  sendMessage(memberRows, today)
 }
