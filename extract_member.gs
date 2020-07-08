@@ -1,4 +1,4 @@
-function extractMember(sheet, day) {
+function extractMembers(sheet, day) {
 
   const DAY_COLUMN = 3
   const data = sheet.getDataRange().getValues()
