@@ -14,6 +14,6 @@ function doPost(e) {
   
   const column = theDayColumnIndex(sheet, date)
   
-  updateStatus(sheet, id, column, true)
-
+  updateStatus(sheet, id, column, true) // TODO: エラーハンドリング カラムが見つからない場合を考慮する
+  
 }

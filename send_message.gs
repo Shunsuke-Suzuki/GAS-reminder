@@ -24,6 +24,7 @@ function sendMessage(memberRows, date) {
   const ID_COLUMN = 0
   const NAME_COLUMN = 1
   const ROOM_COLUMN = 2
+  const dateString = dateFormat.format(date, "yyyy-MMdd")
   
   function section(row) {
     const id = row[ID_COLUMN]
@@ -44,7 +45,7 @@ function sendMessage(memberRows, date) {
           "emoji": true
         },
         "style": "primary",
-        "value": String(id) + "," + '"07/06"' // TODO: ベタ書き修正する
+        "value": String(id) + "," + dateString // TODO: ベタ書き修正する
       }
     }
   }
