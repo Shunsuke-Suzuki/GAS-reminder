@@ -10,5 +10,3 @@ function myFunction() {
   
   sendMessage(memberRows)
 }
-
-
