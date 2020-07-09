@@ -1,4 +1,4 @@
-function sendMessage(memberRows) {
+function sendMessage(memberRows, date) {
 
   // ====================================
   // ベースメッセージ
@@ -24,12 +24,13 @@ function sendMessage(memberRows) {
   const ID_COLUMN = 0
   const NAME_COLUMN = 1
   const ROOM_COLUMN = 2
+  const dateString = dateFormat.format(date, "yyyy-MMdd")
   
   function section(row) {
     const id = row[ID_COLUMN]
     const name = row[NAME_COLUMN]
     const room = row[ROOM_COLUMN]
-    
+ 
     return {
       "type": "section",
       "text": {
@@ -44,7 +45,7 @@ function sendMessage(memberRows) {
           "emoji": true
         },
         "style": "primary",
-        "value": String(id) + "," + "0706" // TODO: ベタ書き修正する
+        "value": String(id) + "," + dateString
       }
     }
   }
