@@ -10,6 +10,6 @@ function myFunction() {
   
   const memberRows = extractMembers(sheet, WEEK[wDay])
 
-  sendMessage(memberRows)
+  sendMessage(memberRows, date)
 
 }
