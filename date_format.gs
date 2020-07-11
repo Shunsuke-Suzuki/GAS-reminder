@@ -1,4 +1,4 @@
-dateFormat = {
+const dateFormat = {
   _fmt: {
     yyyy: date =>  date.getFullYear() + '' ,
     MM: date =>  ('0' + (date.getMonth() + 1)).slice(-2) ,
