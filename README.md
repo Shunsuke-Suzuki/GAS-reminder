@@ -6,8 +6,7 @@
 - incoming-webhook
 
 ## 使用するスプレッドシート
-以下のようなスプレッドシートを作成してください。
-<img width="633" alt="スクリーンショット 2020-07-07 21 24 43" src="https://user-images.githubusercontent.com/49185403/86781287-a7bd8980-c098-11ea-8aaa-8aa18c0d6090.png">
+URLを共有するので神谷に連絡してください
 
 ## 環境構築
 GAS IDE（ブラウザ:chrome）で開発します。非常に面倒です。すみません
@@ -19,7 +18,7 @@ GAS IDE（ブラウザ:chrome）で開発します。非常に面倒です。す
 
 4. **GASをデプロイ**
 
-```公開 > ウェブアプリケーションとして導入 > 更新```で、デプロイ完了。(完了後に表示される"Current web app URL"は次のステップで使用します。)
+```公開 > ウェブアプリケーションとして導入 > 更新(Who has access to the app: Anyone even anonymousを指定する)```で、デプロイ完了。(完了後に表示される"Current web app URL"は次のステップで使用します。)
 
 5. **SlackAppをインタラクティブにする**
 
